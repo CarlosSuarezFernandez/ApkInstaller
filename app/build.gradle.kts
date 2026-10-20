@@ -6,6 +6,16 @@ plugins {
 }
 
 // Release signing is read from a local, git-ignored keystore.properties file (see README).
+// Single source of truth for the version: `appVersionName` in gradle.properties (MAJOR.MINOR.PATCH).
+// versionCode is derived as MAJOR * 10000 + MINOR * 100 + PATCH, so it always increases with the name.
+val appVersionName: String = providers.gradleProperty("appVersionName").get()
+val appVersionCode: Int = appVersionName.split(".").let { parts ->
+    require(parts.size == 3 && parts.all { it.toIntOrNull() in 0..99 }) {
+        "appVersionName must be MAJOR.MINOR.PATCH with MINOR and PATCH between 0 and 99, was '$appVersionName'"
+    }
+    parts[0].toInt() * 10000 + parts[1].toInt() * 100 + parts[2].toInt()
+}
+
 val keystoreProperties = Properties().apply {
     val file = rootProject.file("keystore.properties")
     if (file.exists()) file.inputStream().use { load(it) }
@@ -19,8 +29,8 @@ android {
         applicationId = "com.carlos.apkinstaller"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = appVersionCode
+        versionName = appVersionName
     }
 
     signingConfigs {
@@ -57,7 +67,7 @@ android {
 }
 
 base {
-    archivesName.set("ApkInstaller-${android.defaultConfig.versionName}")
+    archivesName.set("ApkInstaller-$appVersionName")
 }
 
 dependencies {
