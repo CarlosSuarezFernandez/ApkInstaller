@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">ApkInstaller</string>
+    <string name="open_with_label">Install with ApkInstaller</string>
+    <string name="menu">Menu</string>
+
+    <string name="home_title">Install APK files</string>
+    <string name="home_subtitle">Supports .apk, .apks, .xapk and split APKs. No ads, no tracking.</string>
+    <string name="pick_file">Select file (.apk, .apks, .xapk)</string>
+    <string name="pick_multiple">Select multiple APKs</string>
+    <string name="loading">Reading package…</string>
+
+    <string name="version_format">Version %1$s (%2$d)</string>
+    <string name="installed_version_format">Installed: %1$s (%2$d)</string>
+    <string name="splits_summary">%1$d APK(s) · %2$s</string>
+    <string name="split_base">Base APK</string>
+    <string name="split_base_name">base</string>
+    <string name="for_feature">for %1$s</string>
+    <string name="group_base">Base</string>
+    <string name="group_feature">Features</string>
+    <string name="group_abi">Architecture (ABI)</string>
+    <string name="group_density">Screen density</string>
+    <string name="group_language">Languages</string>
+    <string name="group_other">Other</string>
+    <string name="warning_incompatible_abi">None of the native library splits matches this device\'s architecture. The app will probably not work.</string>
+    <string name="warning_downgrade">This version is older than the installed one. Android usually rejects downgrades.</string>
+
+    <string name="install">Install</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="open_app">Open</string>
+    <string name="installing_progress">Copying APKs… %1$d%%</string>
+    <string name="waiting_confirmation">Waiting for confirmation…</string>
+    <string name="install_success">App installed successfully.</string>
+    <string name="error_title">Something went wrong</string>
+
+    <string name="permission_title">Permission required</string>
+    <string name="permission_message">Allow ApkInstaller to install unknown apps in the next screen, then come back and press Install again.</string>
+    <string name="open_settings">Open settings</string>
+
+    <string name="error_not_archive">The selected file is not a valid APK or APK bundle.</string>
+    <string name="error_no_apks">No APK files were found inside the selected file.</string>
+    <string name="error_unreadable_manifest">Could not read one of the APKs. It may be corrupt or encrypted (e.g. encrypted .apkm).</string>
+    <string name="error_mixed_packages">The selected APKs belong to different apps.</string>
+    <string name="error_version_mismatch">The selected APKs have different versions.</string>
+    <string name="error_no_base">The base APK is missing.</string>
+    <string name="error_multiple_bases">More than one base APK was selected.</string>
+    <string name="error_io">Could not read the selected file.</string>
+
+    <string name="install_failed_generic">Installation failed.</string>
+    <string name="install_failed_aborted">Installation was cancelled.</string>
+    <string name="install_failed_blocked">Installation was blocked by the system or a device policy.</string>
+    <string name="install_failed_conflict">Conflicts with an installed app (different signature, or a downgrade). Uninstall the existing app and try again.</string>
+    <string name="install_failed_incompatible">The app is not compatible with this device.</string>
+    <string name="install_failed_invalid">The APKs are invalid or some required split is missing.</string>
+    <string name="install_failed_storage">Not enough storage space.</string>
+
+    <string name="settings_theme">Theme</string>
+    <string name="theme_system">Follow system</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_dynamic">Material You colors</string>
+</resources>

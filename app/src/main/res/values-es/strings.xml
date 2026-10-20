@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_with_label">Instalar con ApkInstaller</string>
+    <string name="menu">Menú</string>
+
+    <string name="home_title">Instala archivos APK</string>
+    <string name="home_subtitle">Compatible con .apk, .apks, .xapk y split APKs. Sin anuncios ni rastreo.</string>
+    <string name="pick_file">Seleccionar archivo (.apk, .apks, .xapk)</string>
+    <string name="pick_multiple">Seleccionar varios APKs</string>
+    <string name="loading">Leyendo paquete…</string>
+
+    <string name="version_format">Versión %1$s (%2$d)</string>
+    <string name="installed_version_format">Instalada: %1$s (%2$d)</string>
+    <string name="splits_summary">%1$d APK(s) · %2$s</string>
+    <string name="split_base">APK base</string>
+    <string name="split_base_name">base</string>
+    <string name="for_feature">para %1$s</string>
+    <string name="group_base">Base</string>
+    <string name="group_feature">Módulos</string>
+    <string name="group_abi">Arquitectura (ABI)</string>
+    <string name="group_density">Densidad de pantalla</string>
+    <string name="group_language">Idiomas</string>
+    <string name="group_other">Otros</string>
+    <string name="warning_incompatible_abi">Ningún split de librerías nativas coincide con la arquitectura de este dispositivo. Probablemente la app no funcione.</string>
+    <string name="warning_downgrade">Esta versión es anterior a la instalada. Android normalmente rechaza las versiones anteriores.</string>
+
+    <string name="install">Instalar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="done">Hecho</string>
+    <string name="open_app">Abrir</string>
+    <string name="installing_progress">Copiando APKs… %1$d%%</string>
+    <string name="waiting_confirmation">Esperando confirmación…</string>
+    <string name="install_success">App instalada correctamente.</string>
+    <string name="error_title">Algo ha fallado</string>
+
+    <string name="permission_title">Permiso necesario</string>
+    <string name="permission_message">Permite a ApkInstaller instalar apps desconocidas en la siguiente pantalla, vuelve y pulsa Instalar de nuevo.</string>
+    <string name="open_settings">Abrir ajustes</string>
+
+    <string name="error_not_archive">El archivo seleccionado no es un APK ni un paquete de APKs válido.</string>
+    <string name="error_no_apks">No se han encontrado APKs dentro del archivo seleccionado.</string>
+    <string name="error_unreadable_manifest">No se pudo leer uno de los APKs. Puede estar dañado o cifrado (p. ej. .apkm cifrado).</string>
+    <string name="error_mixed_packages">Los APKs seleccionados pertenecen a apps diferentes.</string>
+    <string name="error_version_mismatch">Los APKs seleccionados tienen versiones diferentes.</string>
+    <string name="error_no_base">Falta el APK base.</string>
+    <string name="error_multiple_bases">Se ha seleccionado más de un APK base.</string>
+    <string name="error_io">No se pudo leer el archivo seleccionado.</string>
+
+    <string name="install_failed_generic">La instalación ha fallado.</string>
+    <string name="install_failed_aborted">Se ha cancelado la instalación.</string>
+    <string name="install_failed_blocked">El sistema o una política del dispositivo ha bloqueado la instalación.</string>
+    <string name="install_failed_conflict">Hay conflicto con una app instalada (firma distinta o versión anterior). Desinstala la app existente e inténtalo de nuevo.</string>
+    <string name="install_failed_incompatible">La app no es compatible con este dispositivo.</string>
+    <string name="install_failed_invalid">Los APKs no son válidos o falta algún split necesario.</string>
+    <string name="install_failed_storage">No hay suficiente espacio de almacenamiento.</string>
+
+    <string name="settings_theme">Tema</string>
+    <string name="theme_system">Según el sistema</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Oscuro</string>
+    <string name="theme_dynamic">Colores Material You</string>
+</resources>
