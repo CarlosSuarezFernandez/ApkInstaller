@@ -29,7 +29,7 @@ Requirements: JDK 17+ and the Android SDK (compileSdk 37).
 ```bash
 ./gradlew assembleDebug          # debug build
 ./gradlew testDebugUnitTest      # unit tests
-./gradlew assembleRelease        # release build -> app/build/outputs/apk/release/
+./gradlew assembleRelease        # local release build -> app/build/outputs/apk/release/
 ```
 
 ### Signing release builds
@@ -50,6 +50,14 @@ keyPassword=...
 ```
 
 Always sign releases with the same key; otherwise users can't update without uninstalling first.
+
+## Versioning and releases
+
+The version lives in `gradle.properties` as `appVersionName` (`MAJOR.MINOR.PATCH`); `versionCode` is derived from it as `MAJOR * 10000 + MINOR * 100 + PATCH`.
+
+To publish a release, bump `appVersionName` in a pull request and merge it into `main`. The [Release workflow](.github/workflows/release.yml) then builds and signs the APK and publishes it as GitHub Release `vX.Y.Z` (with a `.sha256` checksum and auto-generated notes). Pushes that don't change the version don't create a release.
+
+CI signing uses these repository secrets: `RELEASE_KEYSTORE_BASE64` (`base64 -i release.jks`), `RELEASE_KEYSTORE_PASSWORD`, `RELEASE_KEY_ALIAS` and `RELEASE_KEY_PASSWORD`.
 
 ## Project structure
 
