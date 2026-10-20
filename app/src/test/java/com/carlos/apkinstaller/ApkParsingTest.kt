@@ -57,12 +57,13 @@ class ApkParsingTest {
     }
 
     @Test
-    fun `bundletool apks only installs splits and ignores standalones`() {
+    fun `bundletool apks installs splits and asset packs but ignores standalones`() {
         val apks = zipOf(
             "app.apks",
             mapOf(
                 "splits/base-master.apk" to fixture("base"),
                 "splits/base-es.apk" to fixture("config.es"),
+                "asset-slices/audio_pack_1-master.apk" to fixture("config.xxhdpi"),
                 "standalones/standalone-arm64_v8a_xxhdpi.apk" to fixture("base"),
                 "toc.pb" to fixture("base"),
             ),
@@ -70,7 +71,7 @@ class ApkParsingTest {
         assertFalse(ArchiveExtractor.isApk(apks))
         val extracted = ArchiveExtractor.extractApks(apks, tmp.newFolder("out"), "b")
         val splitNames = extracted.map { ManifestReader.read(it).splitName }
-        assertEquals(listOf("config.es", null), splitNames)
+        assertEquals(listOf("config.xxhdpi_v4", "config.es", null), splitNames)
         extracted.forEach { assertEquals(tmp.root.resolve("out"), it.parentFile) }
     }
 
