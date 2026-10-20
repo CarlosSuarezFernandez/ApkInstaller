@@ -30,11 +30,12 @@ object ArchiveExtractor {
     }
 
     /**
-     * Picks which APK entries to install. bundletool `.apks` files contain both
-     * `splits/` and `standalones/` variants; only the splits must be installed.
+     * Picks which APK entries to install. bundletool `.apks` files contain `splits/`
+     * (base, config and feature splits), `asset-slices/` (Play Asset Delivery packs)
+     * and `standalones/` (pre-Lollipop variants that must not be mixed with splits).
      */
     fun selectEntries(names: List<String>): List<String> {
-        val splits = names.filter { it.startsWith("splits/") }
+        val splits = names.filter { it.startsWith("splits/") || it.startsWith("asset-slices/") }
         if (splits.isNotEmpty()) return splits.sorted()
         val regular = names.filterNot { it.startsWith("standalones/") }
         return regular.ifEmpty { names.take(1) }.sorted()

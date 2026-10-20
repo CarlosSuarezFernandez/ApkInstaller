@@ -24,7 +24,7 @@ object BinaryXmlParser {
     private val knownAttributes = mapOf(
         0x0101021b to "versionCode",
         0x0101021c to "versionName",
-        0x01010577 to "isFeatureSplit",
+        0x0101055b to "isFeatureSplit",
     )
 
     fun readRootAttributes(data: ByteArray): Map<String, String> {
